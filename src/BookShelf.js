@@ -42,14 +42,16 @@ class BookShelf extends Component {
                                                 {options.map((item) => (
                                                     <option value={item.value}
                                                         disabled={item.value === 'move' ? true : false}
-                                                        selected={item.option === shelf ? true : false}>{item.option}
+                                                        selected={item.option === shelf ? true : false}
+                                                    >
+                                                        {item.option}
                                                     </option>
                                                 ))}
                                             </select>
                                         </div>
                                     </div>
-                                    <div className="book-title">To Kill a Mockingbird</div>
-                                    <div className="book-authors">Harper Lee</div>
+                                    <div className="book-title">{book.title}</div>
+                                    <div className="book-authors">{book.authors[0]}</div>
                                 </div>
                             </li>
                         ))}
