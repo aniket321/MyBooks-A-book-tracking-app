@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as BooksAPI from './BooksAPI';
+import { Link } from 'react-router-dom';
 
 class SearchBooks extends Component {
 
@@ -49,7 +50,8 @@ class SearchBooks extends Component {
 
     render() {
 
-        const { query, books } = this.state;
+        const { books } = this.state;
+        const { onUpdateShelf } = this.props;
         const options = [
             {
                 value: "move",
@@ -73,10 +75,19 @@ class SearchBooks extends Component {
             }
         ];
 
+        const updateShelf = (book, event) => {
+            onUpdateShelf(book, event.target.value);
+        }
+
         return (
             <div className="search-books">
                 <div className="search-books-bar">
-                    <button className="close-search">Close</button>
+                    <Link
+                        to="/"
+                        className="close-search"
+                    >
+                        Close
+                    </Link>
                     <div className="search-books-input-wrapper">
                         <input
                             type="text"
@@ -93,7 +104,9 @@ class SearchBooks extends Component {
                                     <div className="book-top">
                                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
                                         <div className="book-shelf-changer">
-                                            <select value={book.shelf}
+                                            <select
+                                                value={book.shelf}
+                                                onChange={(event) => updateShelf(book, event)}
                                             >
                                                 {options.map((item) => (
                                                     <option value={item.value}
