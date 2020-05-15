@@ -8,6 +8,7 @@ class BooksApp extends Component {
     state = {
         books: []
     }
+
     componentDidMount() {
         BooksAPI.getAll()
             .then((books) => {
@@ -17,10 +18,30 @@ class BooksApp extends Component {
             })
     }
 
+    update = (books, id, shelf) => {
+        const booksList = []
+        books.forEach((book) => {
+            if (book.id === id) {
+                book.shelf = shelf;
+            }
+            booksList.push(book);
+        });
+        return booksList;
+    }
+
+    updateShelf = (book, shelf) => {
+        BooksAPI.update(book, shelf)
+            .then((books) => {
+                this.setState((currentState) => ({
+                    books: this.update(currentState.books, book.id, shelf)
+                }))
+            })
+    }
+
     render() {
         return (
             <div className="app">
-                <ListBooks books={this.state.books} />
+                <ListBooks books={this.state.books} onUpdateShelf={this.updateShelf} />
             </div>
         )
     }
