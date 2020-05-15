@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ListBooks from './ListBooks';
+import SearchBooks from './SearchBooks';
 import * as BooksAPI from './BooksAPI';
 import './App.css';
 
@@ -42,6 +43,7 @@ class BooksApp extends Component {
         return (
             <div className="app">
                 <ListBooks books={this.state.books} onUpdateShelf={this.updateShelf} />
+                {/* <SearchBooks books={this.state.books} /> */}
             </div>
         )
     }
