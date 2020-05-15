@@ -40,7 +40,10 @@ class BookShelf extends Component {
                                         <div className="book-shelf-changer">
                                             <select>
                                                 {options.map((item) => (
-                                                    <option value={item.value} disabled={item.value === 'move' ? true : false}>{item.option}</option>
+                                                    <option value={item.value}
+                                                        disabled={item.value === 'move' ? true : false}
+                                                        selected={item.option === shelf ? true : false}>{item.option}
+                                                    </option>
                                                 ))}
                                             </select>
                                         </div>
