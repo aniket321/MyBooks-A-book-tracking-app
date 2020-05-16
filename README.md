@@ -6,7 +6,7 @@ This app provides the user with list of books displaying the shelves they are pr
 * Want To Read.
 * Read.
 
-The interface is divided into 3 parts displaying 3 shelves and the books placed in those shelves. User can also search for a book(search results are limited to a particular set of search terms refer [SEARCH_TERMS.md] (SEARCH_TERMS.md)) and from those results can place the book into one of the 3 shelves.
+The interface is divided into 3 parts displaying 3 shelves and the books placed in those shelves. User can also search for a book(search results are limited to a particular set of search terms refer SEARCH_TERMS.md) and from those results can place the book into one of the 3 shelves.
 
 Technologies:
 
