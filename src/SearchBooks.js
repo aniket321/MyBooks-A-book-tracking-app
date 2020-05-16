@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import * as BooksAPI from './BooksAPI'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { options } from './constants'
 
 class SearchBooks extends Component {
 
@@ -53,28 +54,6 @@ class SearchBooks extends Component {
 
         const { books } = this.state;
         const { onUpdateShelf } = this.props;
-        const options = [
-            {
-                value: "move",
-                option: "Move to..."
-            },
-            {
-                value: "currentlyReading",
-                option: "Currently Reading"
-            },
-            {
-                value: "wantToRead",
-                option: "Want to Read"
-            },
-            {
-                value: "read",
-                option: "Read"
-            },
-            {
-                value: "none",
-                option: "None"
-            }
-        ];
 
         const updateShelf = (book, event) => {
             onUpdateShelf(book, event.target.value);

@@ -1,32 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { options } from './constants'
 
 class BookShelf extends Component {
     render() {
 
         const { booksList, shelf, onUpdateShelf } = this.props;
-        const options = [
-            {
-                value: "move",
-                option: "Move to..."
-            },
-            {
-                value: "currentlyReading",
-                option: "Currently Reading"
-            },
-            {
-                value: "wantToRead",
-                option: "Want to Read"
-            },
-            {
-                value: "read",
-                option: "Read"
-            },
-            {
-                value: "none",
-                option: "None"
-            }
-        ];
 
         const updateShelf = (book, event) => {
             onUpdateShelf(book, event.target.value);
