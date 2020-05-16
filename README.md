@@ -1,6 +1,6 @@
 # MyBooks app - A Book Tracking app
 
-This app provides the user with list of books. Also it provides user to place the book in one of the three shelves namely:
+This app provides the user with list of books displaying the shelves they are present in. Also it provides user to place the book in one of the three shelves namely:
 
 * Currently Reading.
 * Want To Read.
