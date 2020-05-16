@@ -20,23 +20,19 @@ class BooksApp extends Component {
             })
     }
 
-    update = (books, id, shelf) => {
-        const booksList = []
-        books.forEach((book) => {
-            if (book.id === id) {
-                book.shelf = shelf;
-            }
-            booksList.push(book);
-        });
-        return booksList;
+    update = () => {
+        BooksAPI.getAll()
+            .then((books) => {
+                this.setState(() => ({
+                    books
+                }))
+            })
     }
 
     updateShelf = (book, shelf) => {
         BooksAPI.update(book, shelf)
             .then((books) => {
-                this.setState((currentState) => ({
-                    books: this.update(currentState.books, book.id, shelf)
-                }))
+                this.update();
             })
     }
 
