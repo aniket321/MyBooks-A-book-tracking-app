@@ -39,13 +39,13 @@ class BooksApp extends Component {
     render() {
         return (
             <div className="app">
-                <Route exact path='/' render={() => (
+                {this.state.books.length > 0 && (<Route exact path='/' render={() => (
                     <ListBooks
                         books={this.state.books}
                         onUpdateShelf={this.updateShelf}
                     />
                 )}
-                />
+                />)}
                 <Route exact path="/search" render={({ history }) => (
                     <SearchBooks
                         books={this.state.books}
