@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'
 
 class BookShelf extends Component {
     render() {
@@ -49,7 +50,6 @@ class BookShelf extends Component {
                                                 {options.map((item) => (
                                                     <option value={item.value}
                                                         disabled={item.value === 'move' ? true : false}
-                                                        // selected={item.option === shelf ? true : false}
                                                         key={item.value}
                                                     >
                                                         {item.option}
@@ -68,6 +68,12 @@ class BookShelf extends Component {
             </div >
         )
     }
+}
+
+BookShelf.propTypes = {
+    booksList: PropTypes.array.isRequired,
+    onUpdateShelf: PropTypes.func.isRequired,
+    shelf: PropTypes.string.isRequired
 }
 
 export default BookShelf
