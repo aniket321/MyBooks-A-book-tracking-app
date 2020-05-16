@@ -1,5 +1,6 @@
 html, body, .root {
   height: 100%;
+  font-family: 'Overpass', sans-serif;
 }
 
 body {
@@ -14,7 +15,7 @@ body, .app {
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #00bfff;
   text-align: center;
 }
 
@@ -58,7 +59,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #00bfff;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -69,7 +70,7 @@ body, .app {
 }
 
 .open-search button:hover {
-  background-color: rgb(0, 102, 0);
+  background-color: #87ceeb;
 }
 
 
@@ -169,7 +170,7 @@ button:active {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #87ceeb;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -182,6 +183,7 @@ button:active {
   height: 100%;
   opacity: 0;
   cursor: pointer;
+  
 }
 
 /* book cover */

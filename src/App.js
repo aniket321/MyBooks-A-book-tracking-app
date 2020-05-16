@@ -7,6 +7,9 @@ import './App.css';
 
 class BooksApp extends Component {
 
+    /**
+    State to store the books object(array)
+    */
     state = {
         books: []
     }
@@ -20,6 +23,10 @@ class BooksApp extends Component {
             })
     }
 
+    /**
+    * @description Calls getAll() api to fetch books and updates the state
+    */
+
     update = () => {
         BooksAPI.getAll()
             .then((books) => {
@@ -28,6 +35,12 @@ class BooksApp extends Component {
                 }))
             })
     }
+
+    /**
+    * @description updates the shelf of book using the update() api
+    * @param {object} book
+    * @param {string} shlef
+    */
 
     updateShelf = (book, shelf) => {
         BooksAPI.update(book, shelf)

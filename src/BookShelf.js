@@ -7,6 +7,12 @@ class BookShelf extends Component {
 
         const { booksList, shelf, onUpdateShelf } = this.props;
 
+        /**
+        * @description calls the app updateshelf function to update the shelf of the book
+        * @param {object} book
+        * @param {object} event
+        */
+
         const updateShelf = (book, event) => {
             onUpdateShelf(book, event.target.value);
         }

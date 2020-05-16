@@ -11,6 +11,11 @@ class SearchBooks extends Component {
         query: ''
     }
 
+    /**
+    * @description Finds books related to search query, adds shelf key to the books object and filters the book based on required keys existing in the object
+    * @param {string} query
+    */
+
     updateQuery = (query) => {
         BooksAPI.search(query)
             .then((books) => {
@@ -34,8 +39,15 @@ class SearchBooks extends Component {
                                 books[i].shelf = 'none';
                             }
                         }
+
+                        const updatedBooks = books.filter((book) =>
+                            book.hasOwnProperty('imageLinks') &&
+                            book.hasOwnProperty('id') &&
+                            book.hasOwnProperty('title') &&
+                            book.hasOwnProperty('authors'))
+
                         this.setState(() => ({
-                            books: books,
+                            books: updatedBooks,
                             query: query
                         }))
                     }
