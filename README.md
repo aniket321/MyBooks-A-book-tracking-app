@@ -14,6 +14,8 @@ Technologies:
 * HTML
 * CSS
 
+Check out the app - https://reactnd-project-myreads-starter.aniketshashikant.now.sh/
+
 
 ## Use the App right away:
 
